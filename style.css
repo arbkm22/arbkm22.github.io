@@ -3,7 +3,7 @@ body {
     color: white;
 }
 
-h1 {
+.heading {
     font-family: Acme;
     font-size: 175px;
     text-align: center;
