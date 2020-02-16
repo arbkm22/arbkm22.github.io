@@ -8,16 +8,58 @@ body {
     font-size: 175px;
     text-align: center;
     color: #fff;
-    text-shadow:
-        0 0 5px #fff;
-        0 0 10px #fff;
-        0 0 20px #fff;
-        0 0 40px #0ff;
-        0 0 8px #0ff;
-        0 0 9px #0ff;
-        0 0 100px #0ff;
-        0 0 150px #0ff;
-        
+    color: #d4eaff;
+    text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(18, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2605ff, 0 0 200px #2695ff, 0 0 300 px #2695ff, 0 0 500px #26955ff;
+    -webkit-animation: buzz 0.01s infinite alternate;
+            animation: buzz 0.01s infinite alternate;
+}
+
+@-webkitkeyframes buzz {
+    70% {
+        opacity: 0.80;
+    }
+}
+
+@keyframes buzz {
+    70% {
+        opacity: 0.80;
+    }
+}
+
+@-webkit-keyframes blink {
+    40% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0.8;
+    }
+    43% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0.2;
+    }
+    46% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    40% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0.8;
+    }
+    43% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0.2;
+    }
+    46% {
+        opacity: 1;
+    }
 }
 
 p {
