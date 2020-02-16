@@ -7,7 +7,6 @@ body {
     font-family: Acme;
     font-size: 175px;
     text-align: center;
-    color: #fff;
     color: #d4eaff;
     text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(18, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2605ff, 0 0 200px #2695ff, 0 0 300 px #2695ff, 0 0 500px #26955ff;
     -webkit-animation: buzz 0.01s infinite alternate;
