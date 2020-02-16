@@ -1,11 +1,22 @@
 body {
-    background-color: black;
+    background-color: #090A0A;
     color: white;
 }
 
 h1 {
     font-family: Acme;
     font-size: 175px;
+    color: #fff;
+    text-shadow:
+        0 0 5px #fff;
+        0 0 10px #fff;
+        0 0 20px #fff;
+        0 0 40px #0ff;
+        0 0 8px #0ff;
+        0 0 9px #0ff;
+        0 0 100px #0ff;
+        0 0 150px #0ff;
+        
 }
 
 p {
