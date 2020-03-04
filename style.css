@@ -1,96 +1,20 @@
-@font-face {
-    font-family: 'Kalam', cursive;
-    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot");
-    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix") format("embedded-opentype"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2") format("woff2"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff") format("woff"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-    background-color: #090A0A;
-    color: white;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background: black;
 }
 
-.main {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 30%
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 50vw;
-    height: auto;
-    font-size: 16vw;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.main span {
+h1 {
     font-family: 'Kalam', cursive;
-    color: #ffd9e2;
-    text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300 px #ff003c, 0 0 500px #ff003c;
-    -webkit-animation: buzz 0.1s infinite alternate;
-            animation: buzz 0.1s infinite alternate;
-}
-
-@-webkitkeyframes buzz {
-    70% {
-        opacity: 0.80;
-    }
-}
-
-@keyframes buzz {
-    70% {
-        opacity: 0.80;
-    }
-}
-
-@-webkit-keyframes blink {
-    40% {
-        opacity: 1;
-    }
-    42% {
-        opacity: 0.8;
-    }
-    43% {
-        opacity: 1;
-    }
-    45% {
-        opacity: 0.2;
-    }
-    46% {
-        opacity: 1;
-    }
-}
-
-@keyframes blink {
-    40% {
-        opacity: 1;
-    }
-    42% {
-        opacity: 0.8;
-    }
-    43% {
-        opacity: 1;
-    }
-    45% {
-        opacity: 0.2;
-    }
-    46% {
-        opacity: 1;
-    }
+    font-size: 100px;
+    text-align: center;
+    color: pink;
 }
 
 p {
     font-family: Monospace;
     font-size: 38px;
+    color: white;
     text-align: center;
     margin: 20px;
     padding: 20px;
 }
-
-
-
 
