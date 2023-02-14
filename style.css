@@ -32,8 +32,6 @@ p {
 }
 
 .logo b{
-  font: 400 19vh "Kalam";
-  color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
 }
 .logo b span{
