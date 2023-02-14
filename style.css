@@ -4,18 +4,18 @@ body {
 
 .h1 {
   font-family: 'Kalam', cursive;
-  font-size: clamp(15rem, 80vw, 80vh);
+  font-size: clamp(50rem, 80vw, 80vh);
   text-align: center;
   color: pink;
 }
 
 p {
-    font-family: Monospace;
-    font-size: 38px;
-    color: white;
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
+  font-family: Monospace;
+  font-size: 38px;
+  color: white;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
 }
 
 .logo {
