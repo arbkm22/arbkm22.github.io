@@ -171,7 +171,7 @@ window.addEventListener('resize', () => {
 // ===== Navigation =====
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links a');
+const navAnchors = document.querySelectorAll('.nav-links a');
 
 if (burger) {
     burger.addEventListener('click', () => {
@@ -179,7 +179,7 @@ if (burger) {
     });
 }
 
-navLinks.forEach(link => {
+navAnchors.forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
     });
@@ -289,35 +289,55 @@ document.querySelectorAll('[data-aos]').forEach(el => {
 // ===== Project Canvas Animations =====
 const projectCanvases = document.querySelectorAll('.project-canvas');
 
+// Reusable geometries (created once)
+const sharedGeometries = [
+    new THREE.TorusGeometry(2, 0.7, 16, 100),
+    new THREE.IcosahedronGeometry(2, 1),
+    new THREE.BoxGeometry(3, 3, 3)
+];
+
+const projectMeshes = [];
+
 projectCanvases.forEach((canvas, index) => {
+    const canvasWidth = canvas.offsetWidth;
+    const canvasHeight = canvas.offsetHeight;
+    const aspectRatio = canvasWidth / canvasHeight;
+    
     const miniScene = new THREE.Scene();
-    const miniCamera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+    const miniCamera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
     const miniRenderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
     
-    miniRenderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+    miniRenderer.setSize(canvasWidth, canvasHeight);
     miniRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     
-    const geometryType = [
-        new THREE.TorusGeometry(2, 0.7, 16, 100),
-        new THREE.IcosahedronGeometry(2, 1),
-        new THREE.BoxGeometry(3, 3, 3)
-    ][index % 3];
-    
     const material = new THREE.MeshNormalMaterial({ wireframe: false });
-    const mesh = new THREE.Mesh(geometryType, material);
+    const mesh = new THREE.Mesh(sharedGeometries[index % 3], material);
     miniScene.add(mesh);
     
     miniCamera.position.z = 5;
     
-    function animateMini() {
-        requestAnimationFrame(animateMini);
+    projectMeshes.push({
+        mesh,
+        renderer: miniRenderer,
+        scene: miniScene,
+        camera: miniCamera
+    });
+});
+
+// Single consolidated animation loop for all project canvases
+function animateProjectCanvases() {
+    requestAnimationFrame(animateProjectCanvases);
+    
+    projectMeshes.forEach(({ mesh, renderer, scene, camera }) => {
         mesh.rotation.x += 0.01;
         mesh.rotation.y += 0.01;
-        miniRenderer.render(miniScene, miniCamera);
-    }
-    
-    animateMini();
-});
+        renderer.render(scene, camera);
+    });
+}
+
+if (projectMeshes.length > 0) {
+    animateProjectCanvases();
+}
 
 // ===== Initialize =====
 if (document.readyState === 'loading') {
